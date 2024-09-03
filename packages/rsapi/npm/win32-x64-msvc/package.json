@@ -1,5 +1,5 @@
 {
-  "name": "@logseq/rsapi-win32-x64-msvc",
+  "name": "@ndrnpm/rsapi-win32-x64-msvc",
   "private": false,
   "publishConfig": {
     "access": "public"

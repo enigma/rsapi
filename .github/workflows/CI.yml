@@ -21,58 +21,58 @@ on:
 #      - 'sync'
 
 jobs:
-  build-freebsd:
-    runs-on: macos-12
-    if: "startsWith(github.event.head_commit.message, 'chore(release): publish')"
-    name: Build FreeBSD
-    steps:
-      - uses: actions/checkout@v3
-      - name: Build
-        id: build
-        uses: cross-platform-actions/action@v0.21.1
-        env:
-          DEBUG: 'napi:*'
-          RUSTUP_HOME: /home/runner/rustup
-          CARGO_HOME: /home/runner/cargo
-          RUSTUP_IO_THREADS: 1
-        with:
-          operating_system: freebsd
-          version: '13.2'
-          memory: 13G
-          cpu_count: 3
-          hypervisor: qemu
-          environment_variables: 'DEBUG RUSTUP_IO_THREADS'
-          shell: bash
-          run: |
-            env | sort
-            sudo pkg install -y -f curl node libnghttp2 npm
-            sudo npm install -g yarn --ignore-scripts
-            curl https://sh.rustup.rs -sSf --output rustup.sh
-            sh rustup.sh -y --default-toolchain nightly-2023-12-31
-            source "$HOME/.cargo/env"
-            echo "~~~~ rustc --version ~~~~"
-            rustc --version
-            echo "~~~~ node -v ~~~~"
-            node -v
-            echo "~~~~ yarn --version ~~~~"
-            yarn --version
-            pwd
-            ls -lah
-            whoami
-            env
-            freebsd-version
-            yarn install --immutable --mode=skip-build
-            yarn build
-            strip -x packages/*/*.node
-            rm -rf node_modules
-            rm -rf target
-            rm -rf .yarn/cache
-      - name: Upload artifact
-        uses: actions/upload-artifact@v3
-        with:
-          name: bindings-freebsd-amd64
-          path: packages/*/*.node
-          if-no-files-found: error
+  # build-freebsd:
+  #   runs-on: macos-12
+  #   if: "startsWith(github.event.head_commit.message, 'chore(release): publish')"
+  #   name: Build FreeBSD
+  #   steps:
+  #     - uses: actions/checkout@v3
+  #     - name: Build
+  #       id: build
+  #       uses: cross-platform-actions/action@v0.21.1
+  #       env:
+  #         DEBUG: 'napi:*'
+  #         RUSTUP_HOME: /home/runner/rustup
+  #         CARGO_HOME: /home/runner/cargo
+  #         RUSTUP_IO_THREADS: 1
+  #       with:
+  #         operating_system: freebsd
+  #         version: '13.2'
+  #         memory: 13G
+  #         cpu_count: 3
+  #         hypervisor: qemu
+  #         environment_variables: 'DEBUG RUSTUP_IO_THREADS'
+  #         shell: bash
+  #         run: |
+  #           env | sort
+  #           sudo pkg install -y -f curl node libnghttp2 npm
+  #           sudo npm install -g yarn --ignore-scripts
+  #           curl https://sh.rustup.rs -sSf --output rustup.sh
+  #           sh rustup.sh -y --default-toolchain nightly-2023-12-31
+  #           source "$HOME/.cargo/env"
+  #           echo "~~~~ rustc --version ~~~~"
+  #           rustc --version
+  #           echo "~~~~ node -v ~~~~"
+  #           node -v
+  #           echo "~~~~ yarn --version ~~~~"
+  #           yarn --version
+  #           pwd
+  #           ls -lah
+  #           whoami
+  #           env
+  #           freebsd-version
+  #           yarn install --immutable --mode=skip-build
+  #           yarn build
+  #           strip -x packages/*/*.node
+  #           rm -rf node_modules
+  #           rm -rf target
+  #           rm -rf .yarn/cache
+  #     - name: Upload artifact
+  #       uses: actions/upload-artifact@v3
+  #       with:
+  #         name: bindings-freebsd-amd64
+  #         path: packages/*/*.node
+  #         if-no-files-found: error
   build:
     if: "!contains(github.event.head_commit.message, 'skip ci')"
     strategy:
@@ -213,7 +213,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - build
-      - build-freebsd
+      #- build-freebsd
     steps:
       - uses: actions/checkout@v3
 
@@ -253,7 +253,7 @@ jobs:
           mv artifacts/bindings-x86_64-apple-darwin/rsapi/rsapi.darwin-x64.node packages/rsapi/npm/darwin-x64/
           mv artifacts/bindings-aarch64-apple-darwin/rsapi/rsapi.darwin-arm64.node packages/rsapi/npm/darwin-arm64/
           mv artifacts/bindings-aarch64-unknown-linux-gnu/rsapi/rsapi.linux-arm64-gnu.node packages/rsapi/npm/linux-arm64-gnu/
-          mv artifacts/bindings-freebsd-amd64/rsapi/rsapi.freebsd-x64.node packages/rsapi/npm/freebsd-x64/
+          # mv artifacts/bindings-freebsd-amd64/rsapi/rsapi.freebsd-x64.node packages/rsapi/npm/freebsd-x64/
 
       - name: List packages
         run: ls -R packages

@@ -1,5 +1,5 @@
 {
-  "name": "@logseq/rsapi-linux-arm64-gnu",
+  "name": "@ndrnpm/rsapi-linux-arm64-gnu",
   "private": false,
   "publishConfig": {
     "access": "public"

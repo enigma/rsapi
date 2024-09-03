@@ -69,7 +69,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.android-arm64.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-android-arm64')
+            nativeBinding = require('@ndrnpm/rsapi-android-arm64')
           }
         } catch (e) {
           loadError = e
@@ -81,7 +81,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.android-arm-eabi.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-android-arm-eabi')
+            nativeBinding = require('@ndrnpm/rsapi-android-arm-eabi')
           }
         } catch (e) {
           loadError = e
@@ -101,7 +101,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.win32-x64-msvc.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-win32-x64-msvc')
+            nativeBinding = require('@ndrnpm/rsapi-win32-x64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -115,7 +115,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.win32-ia32-msvc.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-win32-ia32-msvc')
+            nativeBinding = require('@ndrnpm/rsapi-win32-ia32-msvc')
           }
         } catch (e) {
           loadError = e
@@ -129,7 +129,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.win32-arm64-msvc.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-win32-arm64-msvc')
+            nativeBinding = require('@ndrnpm/rsapi-win32-arm64-msvc')
           }
         } catch (e) {
           loadError = e
@@ -145,7 +145,7 @@ switch (platform) {
       if (localFileExisted) {
         nativeBinding = require('./rsapi.darwin-universal.node')
       } else {
-        nativeBinding = require('@logseq/rsapi-darwin-universal')
+        nativeBinding = require('@ndrnpm/rsapi-darwin-universal')
       }
       break
     } catch {}
@@ -156,7 +156,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.darwin-x64.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-darwin-x64')
+            nativeBinding = require('@ndrnpm/rsapi-darwin-x64')
           }
         } catch (e) {
           loadError = e
@@ -170,7 +170,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.darwin-arm64.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-darwin-arm64')
+            nativeBinding = require('@ndrnpm/rsapi-darwin-arm64')
           }
         } catch (e) {
           loadError = e
@@ -189,7 +189,7 @@ switch (platform) {
       if (localFileExisted) {
         nativeBinding = require('./rsapi.freebsd-x64.node')
       } else {
-        nativeBinding = require('@logseq/rsapi-freebsd-x64')
+        nativeBinding = require('@ndrnpm/rsapi-freebsd-x64')
       }
     } catch (e) {
       loadError = e
@@ -206,7 +206,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./rsapi.linux-x64-musl.node')
             } else {
-              nativeBinding = require('@logseq/rsapi-linux-x64-musl')
+              nativeBinding = require('@ndrnpm/rsapi-linux-x64-musl')
             }
           } catch (e) {
             loadError = e
@@ -219,7 +219,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./rsapi.linux-x64-gnu.node')
             } else {
-              nativeBinding = require('@logseq/rsapi-linux-x64-gnu')
+              nativeBinding = require('@ndrnpm/rsapi-linux-x64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -235,7 +235,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./rsapi.linux-arm64-musl.node')
             } else {
-              nativeBinding = require('@logseq/rsapi-linux-arm64-musl')
+              nativeBinding = require('@ndrnpm/rsapi-linux-arm64-musl')
             }
           } catch (e) {
             loadError = e
@@ -248,7 +248,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./rsapi.linux-arm64-gnu.node')
             } else {
-              nativeBinding = require('@logseq/rsapi-linux-arm64-gnu')
+              nativeBinding = require('@ndrnpm/rsapi-linux-arm64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -263,7 +263,7 @@ switch (platform) {
           if (localFileExisted) {
             nativeBinding = require('./rsapi.linux-arm-gnueabihf.node')
           } else {
-            nativeBinding = require('@logseq/rsapi-linux-arm-gnueabihf')
+            nativeBinding = require('@ndrnpm/rsapi-linux-arm-gnueabihf')
           }
         } catch (e) {
           loadError = e
@@ -278,7 +278,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./rsapi.linux-riscv64-musl.node')
             } else {
-              nativeBinding = require('@logseq/rsapi-linux-riscv64-musl')
+              nativeBinding = require('@ndrnpm/rsapi-linux-riscv64-musl')
             }
           } catch (e) {
             loadError = e
@@ -291,7 +291,7 @@ switch (platform) {
             if (localFileExisted) {
               nativeBinding = require('./rsapi.linux-riscv64-gnu.node')
             } else {
-              nativeBinding = require('@logseq/rsapi-linux-riscv64-gnu')
+              nativeBinding = require('@ndrnpm/rsapi-linux-riscv64-gnu')
             }
           } catch (e) {
             loadError = e
@@ -314,7 +314,7 @@ if (!nativeBinding || process.env.NAPI_RS_FORCE_WASI) {
   }
   if (!nativeBinding) {
     try {
-      nativeBinding = require('@logseq/rsapi-wasm32-wasi')
+      nativeBinding = require('@ndrnpm/rsapi-wasm32-wasi')
     } catch (err) {
       console.error(err)
     }

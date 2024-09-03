@@ -1,5 +1,5 @@
 {
-  "name": "@logseq/rsapi-freebsd-x64",
+  "name": "@ndrnpm/rsapi-freebsd-x64",
   "private": false,
   "publishConfig": {
     "access": "public"

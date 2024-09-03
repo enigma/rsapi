@@ -269,14 +269,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@logseq/rsapi@workspace:packages/rsapi":
-  version: 0.0.0-use.local
-  resolution: "@logseq/rsapi@workspace:packages/rsapi"
-  dependencies:
-    "@napi-rs/cli": "npm:^3.0.0-alpha.33"
-  languageName: unknown
-  linkType: soft
-
 "@mapbox/node-pre-gyp@npm:^1.0.5":
   version: 1.0.11
   resolution: "@mapbox/node-pre-gyp@npm:1.0.11"
@@ -639,6 +631,14 @@ __metadata:
   checksum: e034179204d99db042c03b2a43ec2b6ceff49b4c7ccbd5f76f2f79457de2951018a683b402878900fd3dd177fc842d880c9a40a634deb138c66778a5c91ae076
   languageName: node
   linkType: hard
+
+"@ndrnpm/rsapi@workspace:packages/rsapi":
+  version: 0.0.0-use.local
+  resolution: "@ndrnpm/rsapi@workspace:packages/rsapi"
+  dependencies:
+    "@napi-rs/cli": "npm:^3.0.0-alpha.33"
+  languageName: unknown
+  linkType: soft
 
 "@nodelib/fs.scandir@npm:2.1.5":
   version: 2.1.5

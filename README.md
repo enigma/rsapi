@@ -2,7 +2,7 @@
 
 This Project contains the following exported libraries:
 
-- rsapi: @logseq/rsapi napi node package
+- rsapi: @ndrnpm/rsapi napi node package
 - rsapi-jni: rsapi for Android JNI
 - lsq-encryption: file encryption based on [age-encryption](http://age-encryption.org/)
 
@@ -20,3 +20,5 @@ freebsd-x64-gnu
 ## How to Build
 
 TODO
+
+- Modify package with: `rg "@logseq.rsapi" --files-with-matches | xargs sed -i '' 's/@logseq.rsapi/@ndrnpm\/rsapi/g'`
