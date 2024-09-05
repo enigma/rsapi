@@ -632,37 +632,37 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@ndrnpm/rsapi-darwin-arm64@npm:0.0.84":
+"@ndrnpm/rsapi-darwin-arm64@npm:*":
   version: 0.0.84
   resolution: "@ndrnpm/rsapi-darwin-arm64@npm:0.0.84"
   conditions: os=darwin & cpu=arm64
   languageName: node
   linkType: hard
 
-"@ndrnpm/rsapi-darwin-x64@npm:0.0.84":
-  version: 0.0.84
-  resolution: "@ndrnpm/rsapi-darwin-x64@npm:0.0.84"
+"@ndrnpm/rsapi-darwin-x64@npm:*":
+  version: 0.0.89
+  resolution: "@ndrnpm/rsapi-darwin-x64@npm:0.0.89"
   conditions: os=darwin & cpu=x64
   languageName: node
   linkType: hard
 
-"@ndrnpm/rsapi-linux-arm64-gnu@npm:0.0.84":
-  version: 0.0.84
-  resolution: "@ndrnpm/rsapi-linux-arm64-gnu@npm:0.0.84"
+"@ndrnpm/rsapi-linux-arm64-gnu@npm:*":
+  version: 0.0.89
+  resolution: "@ndrnpm/rsapi-linux-arm64-gnu@npm:0.0.89"
   conditions: os=linux & cpu=arm64
   languageName: node
   linkType: hard
 
-"@ndrnpm/rsapi-linux-x64-gnu@npm:0.0.84":
-  version: 0.0.84
-  resolution: "@ndrnpm/rsapi-linux-x64-gnu@npm:0.0.84"
+"@ndrnpm/rsapi-linux-x64-gnu@npm:*":
+  version: 0.0.89
+  resolution: "@ndrnpm/rsapi-linux-x64-gnu@npm:0.0.89"
   conditions: os=linux & cpu=x64
   languageName: node
   linkType: hard
 
-"@ndrnpm/rsapi-win32-x64-msvc@npm:0.0.84":
-  version: 0.0.84
-  resolution: "@ndrnpm/rsapi-win32-x64-msvc@npm:0.0.84"
+"@ndrnpm/rsapi-win32-x64-msvc@npm:*":
+  version: 0.0.89
+  resolution: "@ndrnpm/rsapi-win32-x64-msvc@npm:0.0.89"
   conditions: os=win32 & cpu=x64
   languageName: node
   linkType: hard
@@ -672,11 +672,11 @@ __metadata:
   resolution: "@ndrnpm/rsapi@workspace:packages/rsapi"
   dependencies:
     "@napi-rs/cli": "npm:^3.0.0-alpha.33"
-    "@ndrnpm/rsapi-darwin-arm64": "npm:0.0.84"
-    "@ndrnpm/rsapi-darwin-x64": "npm:0.0.84"
-    "@ndrnpm/rsapi-linux-arm64-gnu": "npm:0.0.84"
-    "@ndrnpm/rsapi-linux-x64-gnu": "npm:0.0.84"
-    "@ndrnpm/rsapi-win32-x64-msvc": "npm:0.0.84"
+    "@ndrnpm/rsapi-darwin-arm64": "npm:*"
+    "@ndrnpm/rsapi-darwin-x64": "npm:*"
+    "@ndrnpm/rsapi-linux-arm64-gnu": "npm:*"
+    "@ndrnpm/rsapi-linux-x64-gnu": "npm:*"
+    "@ndrnpm/rsapi-win32-x64-msvc": "npm:*"
   dependenciesMeta:
     "@ndrnpm/rsapi-darwin-arm64":
       optional: true
