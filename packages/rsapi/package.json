@@ -21,6 +21,14 @@
       "x86_64-unknown-freebsd"
     ]
   },
+  "optionalDependencies": {
+    "@ndrnpm/rsapi-darwin-arm64": "0.0.88",
+    "@ndrnpm/rsapi-darwin-x64": "0.0.88",
+    "@ndrnpm/rsapi-freebsd-x64": "0.0.88",
+    "@ndrnpm/rsapi-linux-arm64-gnu": "0.0.88",
+    "@ndrnpm/rsapi-linux-x64-gnu": "0.0.88",
+    "@ndrnpm/rsapi-win32-x64-msvc": "0.0.88"
+  },
   "license": "MIT",
   "devDependencies": {
     "@napi-rs/cli": "^3.0.0-alpha.33"
