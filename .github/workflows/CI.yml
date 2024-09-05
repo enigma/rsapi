@@ -263,6 +263,16 @@ jobs:
       - name: Lerna publish
         if: "startsWith(github.event.head_commit.message, 'chore(release): publish')"
         run: |
+          echo "Current directory: $(pwd)"
+          echo "Git status:"
+          git status
+          echo "Recent commits:"
+          git log -n 5 --oneline
+          echo "Package version:"
+          node -p "require('./packages/rsapi/package.json').version"
+          echo "Git tags:"
+          git tag --list
+          echo "starting..."
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
           # yarn workspaces foreach -A -j 1 run version --no-gh-release
           yarn workspaces foreach -A -j 1 run prepublishOnly --no-gh-release
@@ -272,15 +282,3 @@ jobs:
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-- name: Debug info
-  run: |
-    echo "Current directory: $(pwd)"
-    echo "Git status:"
-    git status
-    echo "Recent commits:"
-    git log -n 5 --oneline
-    echo "Package version:"
-    node -p "require('./packages/rsapi/package.json').version"
-    echo "Git tags:"
-    git tag --list
