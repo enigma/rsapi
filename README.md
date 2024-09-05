@@ -22,3 +22,10 @@ freebsd-x64-gnu
 TODO
 
 - Modify package with: `rg "@logseq.rsapi" --files-with-matches | xargs sed -i '' 's/@logseq.rsapi/@ndrnpm\/rsapi/g'`
+
+- Change version with:
+
+```bash
+cd packages/rsapi
+rg "0.0.84" --files-with-matches | xargs sed -i '' 's/0.0.84/0.0.85/g'
+```
