@@ -18,13 +18,11 @@
       "x86_64-pc-windows-msvc",
       "x86_64-unknown-linux-gnu",
       "aarch64-unknown-linux-gnu",
-      "x86_64-unknown-freebsd"
     ]
   },
   "optionalDependencies": {
     "@ndrnpm/rsapi-darwin-arm64": "0.0.84",
     "@ndrnpm/rsapi-darwin-x64": "0.0.84",
-    "@ndrnpm/rsapi-freebsd-x64": "0.0.84",
     "@ndrnpm/rsapi-linux-arm64-gnu": "0.0.84",
     "@ndrnpm/rsapi-linux-x64-gnu": "0.0.84",
     "@ndrnpm/rsapi-win32-x64-msvc": "0.0.84"
