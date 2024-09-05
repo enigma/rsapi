@@ -274,11 +274,18 @@ jobs:
           git tag --list
           echo "starting..."
           echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" >> ~/.npmrc
+          echo "fixing pkg..."
+          npm pkg fix
+          echo "pkg fixed?"
           # yarn workspaces foreach -A -j 1 run version --no-gh-release
+          echo "prepublish..."
           yarn workspaces foreach -A -j 1 run prepublishOnly --no-gh-release
+          echo "prepublish done"
           # yarn lerna publish from-package --yes
           # ./scripts/publish.sh
+          echo "publishing..."
           cd packages/rsapi && npm publish --access public
+          echo "published"
         env:
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
