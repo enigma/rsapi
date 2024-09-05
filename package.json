@@ -1,7 +1,7 @@
 {
   "name": "rsapi",
   "packageManager": "yarn@4.0.1",
-  "version": "0.0.86",
+  "version": "0.0.87",
   "description": "Node & Rust bindings",
   "author": "Logseq devs <info@logseq.com>",
   "license": "MIT",
