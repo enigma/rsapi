@@ -234,7 +234,7 @@ jobs:
         run: yarn install --immutable --mode=skip-build
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           path: artifacts
 
